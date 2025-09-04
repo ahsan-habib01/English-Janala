@@ -32,8 +32,8 @@
 <body>
   <header>
     <!-- start nav menu -->
-    <nav>
-      <div class="navbar bg-base-100 shadow-sm">
+    <nav class="w-11/12 mx-auto">
+      <div class="navbar bg-base-100 ">
 
         <div class="navbar-start">
           <div class="dropdown">
@@ -44,15 +44,15 @@
               </svg>
             </div>
             <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li><a>Item 1</a></li>
               <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
+                <a href=""><i class="fa-solid fa-circle-question"></i>FAQ</a>
               </li>
-              <li><a>Item 3</a></li>
+              <li>
+                <a href=""><i class="fa-solid fa-book-open"></i>Learn</a>
+              </li>
+              <li>
+                <a href=""><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+              </li>
             </ul>
           </div>
           <a href="" class="flex items-center gap-1">
@@ -63,15 +63,96 @@
         </div>
 
         <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-           <a href="" >FAQ</a>
+          <ul class="menu menu-horizontal px-1 space-x-3">
+            <li>
+              <a href="" class="btn btn-soft btn-primary"><i class="fa-solid fa-circle-question"></i>FAQ</a>
+            </li>
+            <li>
+              <a href="" class="btn btn-soft btn-primary"><i class="fa-solid fa-book-open"></i>Learn</a>
+            </li>
+            <li>
+              <a href="" class="btn btn-soft btn-primary"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+            </li>
           </ul>
         </div>
 
       </div>
     </nav>
-
   </header>
+  <!-- banner -->
+  <section class="flex flex-col-reverse md:flex-row md:justify-between md:items-center gap-10 py-5 w-11/12 mx-auto">
+    <aside class="left flex-1 text-center md:text-left md:pr-20">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 "><span class="text-sky-400">English</span> is easy!!</h2>
+      <p class="font-bangla">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান,
+        আমাদের Interactive
+        Lessons
+        আপনাকে নিয়ে যাবে অন্য একটি Level এ </p>
+      <form action="">
+        <input type="text" placeholder="Enter Your Name" class="input my-4" />
+        <input type="text" placeholder="..........." class="input" />
+        <button class="btn btn-primary block mt-4">Get Started</button>
+      </form>
+    </aside>
+
+    <aside class="img flex-1">
+      <img src="./assets/hero-student.png" alt="">
+    </aside>
+  </section>
+
+  <!-- Let's learn vocabulary -->
+  <section class="py-10 w-11/12 mx-auto">
+    <h2 class="text-4xl font-bold mb-8 text-center">
+      <span class="text-sky-400">Let's</span> Learn Vocabularies
+    </h2>
+    <!-- lessons -->
+    <div id="level-container" class="flex gap-5 flex-wrap justify-center">
+    </div>
+  </section>
+
+  <!-- search box -->
+  <section class="flex justify-center">
+    <div class="join">
+      <div>
+        <label class="input validator join-item">
+          <input id="input-search" type="text" placeholder="Search Vocabulary Now" required />
+        </label>
+      </div>
+      <button id="btn-search" class="btn btn-primary join-item">
+        Search
+      </button>
+    </div>
+  </section>
+
+  <!-- spinner/loading -->
+  <section id="spinner" class="hidden flex justify-center items-center py-10 ">
+    <span class="loading loading-bars loading-xl"></span>
+  </section>
+
+  <!-- word container -->
+  <section id="word-container" class="bg-gray-100 p-10 w-11/12 mx-auto my-10 grid grid-cols-3 gap-5">
+    <div class="text-center  col-span-full rounded-xl py-10 space-y-6 font-bangla">
+      <p class="text-xl font-medium text-gray-600">
+        আপনি এখনো কোন Lesson Select করেন নি
+      </p>
+      <h2 class="font-bold text-4xl">একটি Lesson Select করুন।</h2>
+    </div>
+  </section>
+
+  <!-- Open the modal using ID.showModal() method -->
+  <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+  <!-- show modal -->
+  <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <div id="details-container" class="space-y-5"></div>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
 
 
   <script src="./scripts/script.js"></script>
